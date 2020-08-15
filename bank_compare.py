@@ -51,53 +51,66 @@ Example 1
 Input
 
 10000
-
 20
-
 3
-
 5 9.5
-
 10 9.6
-
 5 8.5
-
 3
-
 10 6.9
-
 5 8.5
-
 5 7.9
 
-
 Output: Bank B
-
 
 Example 2
 
 Input
 
 500000
-
 26
-
 3
-
 13 9.5
-
 3 6.9
-
 10 5.6
-
 3
-
 14 8.5
-
 6 7.4
-
 6 9.6
-
 Output: Bank A
 '''
+P = int(input())
+T = int(input())
+N1 = int(input())
+R1 = []
+for i in range(N1):
+    s = list(map(float,input().split(" ")))
+    R1.append(s)
+
+N2 = int(input())
+R2 =[]
+for i in range(N2):
+    s = list(map(float,input().split(" ")))
+    R2.append(s)
+
+sum  = [0] * 2
+
+for i in R1:
+    z = 1 + i[1] ** (i[0]*12)
+    d = 1- (1/z)
+    emi = P * (i[1]/d)
+    sum[0]+=emi
+
+
+for i in R2:
+    z = 1 + i[1] ** (i[0]*12)
+    d = 1- (1/z)
+    emi = P * (i[1]/d)
+    sum[1]+=emi
+
+if sum[0] < sum[1]:
+    print('Bank A')
+
+else:
+    print('Bank B')
 
