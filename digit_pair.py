@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Jul 18 12:01:54 2020
-
-@author: DRD PC
+Working on it
 """
 
 
